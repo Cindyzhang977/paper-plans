@@ -1,0 +1,25 @@
+@import 'config.css';
+
+.user-interface {
+  display: flex;
+}
+
+.background-img {
+  background-color: var(--light-theme);
+  height: 200px;
+}
+
+.navbar {
+  color: white;
+  flex: 1;
+}
+
+.navItem {
+  background-color: var(--theme);
+  padding: 20px 50px 20px 50px;
+}
+
+.routes {
+  padding: 100px;
+  flex: 3;
+}

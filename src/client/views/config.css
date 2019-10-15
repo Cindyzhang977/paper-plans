@@ -1,0 +1,25 @@
+:root {
+    --theme: #8a2755;
+    --light-theme: #d9ace8;
+    --dark-theme: #45012c;
+    --accent: #a3cee6;
+    --strong-accent: #91a7e6;
+    --off-black: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: var(--off-black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
