@@ -1,0 +1,43 @@
+:root {
+    --theme: #8a2755;
+    --light-theme: #e6a08b;
+    --dark-theme: #45012c;
+    --accent: #a3cee6;
+    --strong-accent: #91a7e6;
+    --off-black: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: var(--off-black);
+}
+
+button {
+  border-radius: 5px;
+  border: 2px solid var(--strong-accent);
+  width: 150px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  background: none;
+  color: var(--strong-accent);
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 var(--accent), 0 2px 6px 0 var(--accent);
+}
+
+.login-buttons {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
