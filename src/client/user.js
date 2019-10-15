@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Link, BrowserRouter as Router, Redirect} from 'react-router-dom';
+import background from './imgs/background.jpg';
 import './views/index.css';
 import './views/user.css';
 
@@ -11,34 +12,43 @@ import Profile from './profile.js';
 class User extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activePath: 'Dashboard',
+    }
   }
 
   render() {
+
+    //mapping to generate navigation items in navbar
+    var pathsDict = {'Dashboard' : '/dashboard', 'Plans' : '/your-plans', 'Memories' : '/memories', 'Profile' : '/profile'};
+    var tabs = ['Dashboard', 'Plans', 'Memories', 'Profile'].map((path) => {
+        var className = 'navItem';
+        if (path === this.state.activePath) {
+            className += ' active-page';
+        }
+        return <Link className={className} onClick={() => {this.setState({activePath: path})}}to={pathsDict[path]}>{path}</Link>
+    })
+
     return(
       <Router>
-        <div>
-          <div className='background-img'>
-          </div>
-          <div className='user-interface'>
-            <div className='navbar'>
-              <ul>
-                <li className='navItem'><Link to="/dashboard">Dashboard</Link></li>
-                <li className='navItem'><Link to="/your-plans">Plans</Link></li>
-                <li className='navItem'><Link to="/memories">Memories</Link></li>
-                <li className='navItem'><Link to="/profile">Profile</Link></li>
-              </ul>
+        <div className='user-page'>
+            <div className='background-img'>
+                <img src={background} alt='background image at mt madonna' />
             </div>
-            <div className='routes'>
-              <Route path='/dashboard' component={Dashboard} />
-              <Route path='/your-plans' component={Plans} />
-              <Route path='/memories' component={Memories} />
-              <Route path='/profile' component={Profile} />
+            <div className='user-interface'>
+                <div className='navbar'>
+                    {tabs}
+                </div>
+                <div className='routes'>
+                    <Route path='/dashboard' component={Dashboard} />
+                    <Route path='/your-plans' component={Plans} />
+                    <Route path='/memories' component={Memories} />
+                    <Route path='/profile' component={Profile} />
+                </div>
             </div>
-          </div>
         </div>
       </Router>
     );
-
   }
 
 }

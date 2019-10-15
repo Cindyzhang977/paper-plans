@@ -1,25 +1,51 @@
 @import 'config.css';
 
+.user-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .user-interface {
   display: flex;
+  /* border: 2px solid red; */
+  flex-grow: 1;
 }
 
 .background-img {
-  background-color: var(--light-theme);
-  height: 200px;
+  /* height: 100vh; */
+  height: 250px;
+  /* display: none; */
+}
+
+.background-img > img {
+  width: 100%;
+  object-fit: cover;
+  height: inherit;
+  object-position: 50% -500px;
 }
 
 .navbar {
   color: white;
-  flex: 1;
+  flex: 0.75;
+  background-color: var(--theme);
 }
 
 .navItem {
-  background-color: var(--theme);
-  padding: 20px 50px 20px 50px;
+  padding: 30px 30px 30px 30px;
+  display: inline-block;
+  width: 100%;
+}
+
+.navItem:hover {
+  cursor: pointer;
 }
 
 .routes {
   padding: 100px;
   flex: 3;
+}
+
+.active-page {
+  background-color: var(--accent);
 }
