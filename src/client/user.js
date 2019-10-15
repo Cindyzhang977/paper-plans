@@ -5,7 +5,7 @@ import './views/index.css';
 import './views/user.css';
 
 import Dashboard from './dashboard.js';
-import Plans from './plans.js';
+import Plans from './your-plans.js';
 import Memories from './memories.js';
 import Profile from './profile.js';
 
