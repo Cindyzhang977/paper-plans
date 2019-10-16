@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Link, Redirect, BrowserRouter as Router} from 'react-router-dom';
+import {Route, Redirect, BrowserRouter as Router} from 'react-router-dom';
 import './client/views/index.css';
 
 import User from './client/user.js';
@@ -33,6 +33,9 @@ const routing = (
     <div>
       <Route exact path='/' component={HomePage} />
       <Route path='/dashboard' component={User} />
+      <Route path='/your-plans' component={User} />
+      <Route path='/memories' component={User} />
+      <Route path='/profile' component={User} />
     </div>
   </Router>
 )

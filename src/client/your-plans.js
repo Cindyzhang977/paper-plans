@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './views/index.css';
 import './views/user.css';
 import './views/your-plans.css'
@@ -23,7 +22,7 @@ class Plans extends React.Component {
     this.setState(prevState => ({
       numPlans: prevState.numPlans + 1,
     }));
-    this.state.plans.upshift(<Plan name={name} />);
+    this.state.plans.add(<Plan name={name} />);
     console.log('added a plan');
   }
 
@@ -77,7 +76,7 @@ class PlanForm extends React.Component {
             <input type='text' name='completeBy' className='form-input' placeholder='complete by' onChange={this.onCompleteByChange.bind(this)} /><br />
             <div className='submit-buttons'>
                 <button className='alt-button'>Cancel</button>
-                <button onSubmit={() => this.props.addPlan(this.state.name, this.state.description, this.state.completeBy)}>Create</button>
+                <button onSubmit={() => {this.props.addPlan(this.state.name, this.state.description, this.state.completeBy)}}>Create</button>
             </div>
         </form>
     );

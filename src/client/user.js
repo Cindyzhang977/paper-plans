@@ -33,7 +33,7 @@ class User extends React.Component {
       <Router>
         <div className='user-page'>
             <div className='background-img'>
-                <img src={background} alt='background image at mt madonna' />
+                <img src={background} />
             </div>
             <div className='user-interface'>
                 <div className='navbar'>
