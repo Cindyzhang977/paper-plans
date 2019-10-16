@@ -26,7 +26,7 @@ class User extends React.Component {
         if (path === this.state.activePath) {
             className += ' active-page';
         }
-        return <Link className={className} onClick={() => {this.setState({activePath: path})}}to={pathsDict[path]}>{path}</Link>
+        return <Link key={path} className={className} onClick={() => {this.setState({activePath: path})}}to={pathsDict[path]}>{path}</Link>
     })
 
     return(

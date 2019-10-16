@@ -1,5 +1,16 @@
 @import 'config.css';
 
+button {
+  margin: 10px;
+  background-color: var(--theme);
+  border: none;
+  color: white;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
 .user-page {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,11 @@
 @import './config.css';
 
+input {
+  border: 1px solid var(--grey);
+  padding: 5px;
+  margin: 5px;
+}
+
 .add-button {
   border: 2px solid var(--dark-theme);
   border-radius: 50%;
@@ -11,8 +17,25 @@
   bottom: 70px;
   right: 170px;
   font-size: 25px;
+  box-shadow: 0 1px 3px 0 var(--dark-theme);
 }
 
 .add-button:hover {
   cursor: pointer;
+}
+
+.plan-form {
+  border: 2px solid var(--light-theme);
+  box-shadow: 0 1px 3px 0 var(--off-black);
+  width: 60%;
+  min-height: 30%;
+  padding: 20px;
+  margin: 30px;
+  background-color: var(--light-background);
+}
+
+.form-input, .submit-buttons {
+  width: 70%;
+  border-radius: 5px;
+  margin-left: 15%;
 }

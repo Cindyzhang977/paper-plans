@@ -21,7 +21,7 @@ class HomePage extends React.Component {
 
     return (
       <div className='login-buttons'>
-        <button onClick={() => this.setState({login: true})}>Log In</button>
+        <button className='login-button' onClick={() => this.setState({login: true})}>Log In</button>
       </div>
     )
   };

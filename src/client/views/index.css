@@ -2,18 +2,12 @@
 
 button {
   border-radius: 5px;
-  border: 2px solid var(--strong-accent);
   width: 150px;
   padding: 5px 10px 5px 10px;
-  margin-top: 200px;
-  margin-bottom: 200px;
-  background: none;
-  color: var(--strong-accent);
 }
 
 button:hover {
   cursor: pointer;
-  box-shadow: 0 1px 2px 0 var(--accent), 0 2px 6px 0 var(--accent);
 }
 
 h1 {
@@ -25,4 +19,16 @@ h1 {
   width: 50%;
   padding: 10px;
   text-align: center;
+}
+
+.login-button {
+  border: 2px solid var(--strong-accent);
+  color: var(--strong-accent);
+  background: none;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.login-button:hover {
+  box-shadow: 0 1px 2px 0 var(--accent), 0 2px 6px 0 var(--accent);
 }
