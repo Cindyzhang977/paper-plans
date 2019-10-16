@@ -11,6 +11,25 @@ button:hover {
   box-shadow: none;
 }
 
+/* welcome.js */
+.welcome-content {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  color: white;
+}
+
+.to-dash {
+  text-decoration: underline;
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+.to-dash {
+  cursor: pointer;
+}
+
+/* user.js */
 .user-page {
   display: flex;
   flex-direction: column;
@@ -21,11 +40,13 @@ button:hover {
   display: flex;
   /* border: 2px solid red; */
   flex-grow: 1;
+  height: 100vh;
 }
 
 .background-img {
-  /* height: 100vh; */
-  height: 250px;
+  height: 100vh;
+  z-index: -1;
+  /* height: 250px; */
   /* display: none; */
 }
 
@@ -33,7 +54,7 @@ button:hover {
   width: 100%;
   object-fit: cover;
   height: inherit;
-  object-position: 50% -500px;
+  /* object-position: 50% -500px; */
 }
 
 .navbar {
@@ -43,7 +64,7 @@ button:hover {
 }
 
 .navItem {
-  padding: 30px 30px 30px 30px;
+  padding: 20px;
   display: inline-block;
   width: 100%;
 }
@@ -59,4 +80,8 @@ button:hover {
 
 .active-page {
   background-color: var(--accent);
+}
+
+#logo:hover {
+  cursor: default;
 }

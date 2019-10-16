@@ -1,10 +1,12 @@
 import React from 'react';
 import {Route, Link, BrowserRouter as Router, Redirect} from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import background from './imgs/background.jpg';
 import './views/index.css';
 import './views/user.css';
 
-import Dashboard from './dashboard.js';
+import Welcome from './welcome.js';
 import Plans from './your-plans.js';
 import Memories from './memories.js';
 import Profile from './profile.js';
@@ -13,15 +15,20 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activePath: 'Dashboard',
+      activePath: 'Plans',
+      toHome: false,
     }
   }
 
   render() {
 
+    if (this.state.toHome) {
+      return <Redirect to='/welcome' />
+    }
+
     //mapping to generate navigation items in navbar
-    var pathsDict = {'Dashboard' : '/dashboard', 'Plans' : '/your-plans', 'Memories' : '/memories', 'Profile' : '/profile'};
-    var tabs = ['Dashboard', 'Plans', 'Memories', 'Profile'].map((path) => {
+    var pathsDict = {'Plans' : '/your-plans', 'Memories' : '/memories', 'Profile' : '/profile'};
+    var tabs = ['Plans', 'Memories', 'Profile'].map((path) => {
         var className = 'navItem';
         if (path === this.state.activePath) {
             className += ' active-page';
@@ -32,15 +39,15 @@ class User extends React.Component {
     return(
       <Router>
         <div className='user-page'>
-            <div className='background-img'>
-                <img src={background} />
-            </div>
+
             <div className='user-interface'>
                 <div className='navbar'>
+                    <div id='logo'className='navItem'>PAPER PLANS</div>
+                    <div className='navItem' onClick={() => this.setState({toHome: true})}>Home</div>
                     {tabs}
+                    <Link className='navItem'>Logout</Link>
                 </div>
                 <div className='routes'>
-                    <Route path='/dashboard' component={Dashboard} />
                     <Route path='/your-plans' component={Plans} />
                     <Route path='/memories' component={Memories} />
                     <Route path='/profile' component={Profile} />

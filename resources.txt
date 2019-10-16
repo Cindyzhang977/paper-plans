@@ -1,0 +1,15 @@
+Passing props to components rendered by React Router:
+https://tylermcginnis.com/react-router-pass-props-to-components/
+
+Flexbox align:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+CSS position:
+https://www.w3schools.com/css/css_positioning.asp
+
+React Transitions Documentation:
+https://reactcommunity.org/react-transition-group/
+
+Transition Group / CSS Transitions Tutorial:
+https://css-tricks.com/animating-between-views-in-react/
+https://medium.com/front-end-weekly/react-page-transition-animations-9d18c90a9831

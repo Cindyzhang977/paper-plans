@@ -12,6 +12,9 @@ button:hover {
 
 h1 {
   font-size: 25px;
+  color: var(--dark-theme);
+  position: relative;
+  left: -40%;
 }
 
 .login-buttons {

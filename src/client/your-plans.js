@@ -28,11 +28,11 @@ class Plans extends React.Component {
 
   render() {
     var form = this.state.displayForm ? <PlanForm addPlan={this.addPlan} /> : <div></div>;
-    // var plans plans.map(() => ); // map
+    // var plans = plans.map(() => ); // map
     console.log('render your plans');
     return (
-      <div>
-          <h1>Your Paper Plans</h1>
+      <div className='contents'>
+          <h1>your paper plans</h1>
           <div className='add-button' onClick={() => {this.setState({displayForm: true})}}>+</div>
           {form}
           {this.state.plans.map((item, index) => {
@@ -50,9 +50,9 @@ class PlanForm extends React.Component {
     super(props);
     //props: addPlan() from Plans
     this.state={
-      name: '',
-      description: '',
-      completeBy: '',
+      name: 'name',
+      description: 'description',
+      completeBy: 'completeBy',
     }
   }
 
@@ -76,7 +76,7 @@ class PlanForm extends React.Component {
             <input type='text' name='completeBy' className='form-input' placeholder='complete by' onChange={this.onCompleteByChange.bind(this)} /><br />
             <div className='submit-buttons'>
                 <button className='alt-button'>Cancel</button>
-                <button onSubmit={() => {this.props.addPlan(this.state.name, this.state.description, this.state.completeBy)}}>Create</button>
+                <button className='button' onClick={() => {this.props.addPlan(this.state.name, this.state.description, this.state.completeBy)}}>Create</button>
             </div>
         </form>
     );
