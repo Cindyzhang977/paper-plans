@@ -9,11 +9,17 @@ class Plans extends React.Component {
   constructor(props) {
     super(props);
     this.addPlan.bind(this);
+    this.setDisplayForm.bind(this);
     this.state = {
       numPlans: 0,
-      plans: [],
+      plans: [<Plan name='Go to Hawaii' description='gotta make enough money first, yikes lmao' completeBy='age 82?' />],
       displayForm: false,
     }
+  }
+
+  /* toggles this.state.displayForm */
+  setDisplayForm() {
+    this.setState({displayForm: !this.state.displayForm});
   }
 
   /* add a plan to this.state.plans using information user passes in in PlanForm */
@@ -22,14 +28,12 @@ class Plans extends React.Component {
     this.setState(prevState => ({
       numPlans: prevState.numPlans + 1,
     }));
-    this.state.plans.add(<Plan name={name} />);
-    console.log('added a plan');
+    this.state.plans.unshift(<Plan name={name} />);
+    console.log('added a plan ' + this.state.plans);
   }
 
   render() {
-    var form = this.state.displayForm ? <PlanForm addPlan={this.addPlan} /> : <div></div>;
-    // var plans = plans.map(() => ); // map
-    console.log('render your plans');
+    var form = this.state.displayForm ? <PlanForm addPlan={this.addPlan.bind(this)} setDisplayForm={this.setDisplayForm.bind(this)} /> : <div></div>;
     return (
       <div className='contents'>
           <h1>your paper plans</h1>
@@ -48,7 +52,7 @@ class Plans extends React.Component {
 class PlanForm extends React.Component {
   constructor(props) {
     super(props);
-    //props: addPlan() from Plans
+    //props: addPlan(), setDisplayForm() from Plans
     this.state={
       name: 'name',
       description: 'description',
@@ -75,7 +79,7 @@ class PlanForm extends React.Component {
             <input type='text' name='description' className='form-input description' placeholder='description' onChange={this.onDescriptionChange.bind(this)} /><br />
             <input type='text' name='completeBy' className='form-input' placeholder='complete by' onChange={this.onCompleteByChange.bind(this)} /><br />
             <div className='submit-buttons'>
-                <button className='alt-button'>Cancel</button>
+                <button className='alt-button' onClick={this.props.setDisplayForm}>Cancel</button>
                 <button className='button' onClick={() => {this.props.addPlan(this.state.name, this.state.description, this.state.completeBy)}}>Create</button>
             </div>
         </form>

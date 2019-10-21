@@ -23,7 +23,7 @@ class User extends React.Component {
   render() {
 
     if (this.state.toHome) {
-      return <Redirect to='/welcome' />
+      return <Redirect to='/' />
     }
 
     //mapping to generate navigation items in navbar
@@ -38,14 +38,14 @@ class User extends React.Component {
 
     return(
       <Router>
-        <div className='user-page'>
-
-            <div className='user-interface'>
+        <div className='user-page' id='dash-animate'>
+            <Welcome />
+            <div className='user-interface' id='dashboard'>
                 <div className='navbar'>
                     <div id='logo'className='navItem'>PAPER PLANS</div>
-                    <div className='navItem' onClick={() => this.setState({toHome: true})}>Home</div>
+                    <a href='#welcome-page'><div className='navItem'>Home</div></a>
                     {tabs}
-                    <Link className='navItem'>Logout</Link>
+                    <div className='navItem' onClick={() => {this.setState({toHome: true})}}>Logout</div>
                 </div>
                 <div className='routes'>
                     <Route path='/your-plans' component={Plans} />

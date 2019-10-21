@@ -12,7 +12,10 @@ class Plan extends React.Component {
 
   render() {
     return (
-      <div>{this.props.name}</div>
+      <div className='plan-container'>
+        <div className='plan-collapsed'>{this.props.name}</div>
+        <div className='dropdown-button'>=</div>
+      </div>
     )
   }
 

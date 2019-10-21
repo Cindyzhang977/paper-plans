@@ -29,11 +29,55 @@ button:hover {
   cursor: pointer;
 }
 
+/* transitions */
+.welcomeTrans {
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 2s;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+
+.user-page-animate {
+  -webkit-animation-name: slideInFromBottom;
+  -webkit-animation-duration: 1s;
+  animation-name: slideInFromBottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0.1}
+  to {opacity: 1}
+}
+
+@keyframes fadein {
+  from {opacity: 0.1}
+  to {opacity: 1}
+}
+
+@-webkit-keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 /* user.js */
 .user-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* position: static; */
 }
 
 .user-interface {

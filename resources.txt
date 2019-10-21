@@ -7,8 +7,16 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 CSS position:
 https://www.w3schools.com/css/css_positioning.asp
 
+Pure CSS Transitions:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+https://www.w3schools.com/css/css3_transitions.asp
+
+CSS Animations:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+
 React Transitions Documentation:
 https://reactcommunity.org/react-transition-group/
+https://reactjs.org/docs/animation.html
 
 Transition Group / CSS Transitions Tutorial:
 https://css-tricks.com/animating-between-views-in-react/
